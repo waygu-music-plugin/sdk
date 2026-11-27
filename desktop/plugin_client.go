@@ -2,6 +2,7 @@ package desktop
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 	"sync/atomic"
 	"time"
@@ -392,3 +393,11 @@ func (s *pluginClientServices) PlayRadio(name string, tracks []pluginapi.Track, 
 }
 
 var _ pluginapi.Services = (*pluginClientServices)(nil)
+
+// AudioPreferencesChanged updates the active host without blocking the UI.
+func (s *pluginClientServices) AudioPreferencesChanged(p pluginapi.AudioPreferences) {
+	data, err := json.Marshal(p)
+	if err == nil {
+		s.send(bridge.PluginHostCall{Action: protocol.HostAudioPreferences, Settings: data})
+	}
+}

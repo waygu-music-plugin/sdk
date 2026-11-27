@@ -42,6 +42,12 @@ type PlaybackMedia struct {
 // AudioPreferences describes the stream quality and normalization selected
 // by the plugin that owns the active playback controls.
 type AudioPreferences struct {
-	Quality   string
-	Normalize bool
+	Quality        string
+	Normalize      bool
+	ReplayGainMode string
+}
+
+// AudioPreferenceServices notifies the host after a plugin changes its playback preferences.
+type AudioPreferenceServices interface {
+	AudioPreferencesChanged(AudioPreferences)
 }

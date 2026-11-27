@@ -9,6 +9,7 @@ const (
 	CapabilityPluginEntries        = "plugin-entries"
 	WindowToggleDesktopLyrics      = "lyrics-toggle"
 	WindowToggleDesktopLyricsLock  = "lyrics-lock"
+	HostAudioPreferences           = "audio-preferences"
 	HostSaveDesktopLyrics          = "desktop-lyrics-save"
 	HostSetDesktopLyricsColor      = "desktop-lyrics-color"
 	HostSetStatusLyrics            = "status-lyrics-enabled"

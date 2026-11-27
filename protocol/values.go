@@ -147,6 +147,7 @@ type LyricWord struct {
 }
 
 type AudioPreferences struct {
-	Quality   string
-	Normalize bool
+	Quality        string
+	Normalize      bool
+	ReplayGainMode string
 }
